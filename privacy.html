@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Game Reaper</title>
+  <meta name="description" content="Privacy Policy for Game Reaper Android application by Agung Softworks. Learn how local permissions and third-party services operate." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://gamereaper.my.id/privacy.html" />
+  <style>
+    :root {
+      --bg: #000000;
+      --text-primary: #ffffff;
+      --text-secondary: #94a3b8;
+      --accent-red: #e8323c;
+      --highlight-yellow: #f2e972;
+      --card-border: rgba(223, 223, 223, 0.6);
+      --max-w: 760px;
+      --font-stack: -apple-system, Roboto, "Segoe UI", sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-stack);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent-red);
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    a:hover {
+      opacity: 0.85;
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
+      border-bottom: 1px solid rgba(223, 223, 223, 0.14);
+      background-color: rgba(0, 0, 0, 0.92);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .brand-logo:hover {
+      text-decoration: none;
+      opacity: 0.95;
+    }
+
+    .brand-logo-mark {
+      width: 12px;
+      height: 22px;
+      background-color: var(--accent-red);
+      border-radius: 3px;
+      display: inline-block;
+      box-shadow: 0 0 12px rgba(232, 50, 60, 0.6);
+    }
+
+    .brand-logo span.accent {
+      color: var(--accent-red);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    nav a.active {
+      color: var(--accent-red);
+      border-bottom-color: var(--accent-red);
+    }
+
+    /* Page Hero */
+    .doc-hero {
+      padding: 48px 0 28px;
+      border-bottom: 1px solid rgba(223, 223, 223, 0.14);
+      margin-bottom: 28px;
+    }
+
+    .doc-badge {
+      display: inline-block;
+      background-color: rgba(242, 233, 114, 0.12);
+      color: var(--highlight-yellow);
+      border: 1px solid rgba(242, 233, 114, 0.45);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .doc-hero h1 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .doc-meta {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .doc-meta strong {
+      color: var(--highlight-yellow);
+    }
+
+    /* Table of Contents Card */
+    .toc-card {
+      background: transparent;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 36px;
+    }
+
+    .toc-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toc-title span {
+      color: var(--highlight-yellow);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 20px;
+    }
+
+    .toc-list a {
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      display: inline-block;
+      padding: 2px 0;
+    }
+
+    .toc-list a:hover {
+      color: var(--accent-red);
+      text-decoration: none;
+    }
+
+    /* Legal Sections */
+    .legal-section {
+      margin-bottom: 34px;
+      scroll-margin-top: 84px;
+    }
+
+    .legal-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-primary);
+      padding-left: 14px;
+      border-left: 4px solid var(--accent-red);
+      line-height: 1.3;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .legal-section h2 .sec-num {
+      color: var(--highlight-yellow);
+      margin-right: 6px;
+    }
+
+    .legal-section p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .legal-section ul {
+      list-style: disc;
+      padding-left: 22px;
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+    }
+
+    .legal-section li {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .legal-section strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .sdk-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .sdk-card {
+      background: transparent;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 18px 20px;
+    }
+
+    .sdk-card h3 {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sdk-card h3 span.tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--highlight-yellow);
+      background-color: rgba(242, 233, 114, 0.12);
+      border: 1px solid rgba(242, 233, 114, 0.4);
+      padding: 2px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+    }
+
+    .sdk-card p {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .callout-card {
+      background: linear-gradient(45deg, rgba(232, 50, 60, 0.24) 24%, #000000 100%);
+      border: 2px solid var(--accent-red);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 16px 0;
+    }
+
+    .callout-card p {
+      margin-bottom: 0;
+      color: var(--text-primary);
+      font-size: 15px;
+    }
+
+    /* Back to Top Action */
+    .back-to-top-wrap {
+      margin: 40px 0 24px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      background: linear-gradient(45deg, #f2e973 18%, #ffffff 100%);
+      color: #000000;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 11px 22px;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(242, 233, 114, 0.2);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 233, 114, 0.32);
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid rgba(223, 223, 223, 0.14);
+      padding: 32px 0 40px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-red);
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .footer-bottom a {
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--accent-red);
+    }
+
+    @media (max-width: 640px) {
+      .doc-hero h1 {
+        font-size: 28px;
+      }
+      .toc-list {
+        grid-template-columns: 1fr;
+      }
+      .legal-section h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Game Reaper Home">
+        <span class="brand-logo-mark" aria-hidden="true"></span>
+        <span>Game <span class="accent">Reaper</span></span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="privacy.html" class="active">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="doc-hero">
+      <span class="doc-badge">Data &amp; Privacy</span>
+      <h1>Privacy Policy</h1>
+      <p class="doc-meta">
+        Last updated: <strong>October 27, 2026</strong> &bull; Effective for <strong>Game Reaper (Android)</strong>
+      </p>
+    </section>
+
+    <!-- Table of Contents -->
+    <nav class="toc-card" aria-label="Table of Contents">
+      <div class="toc-title"><span>#</span> Table of Contents</div>
+      <ul class="toc-list">
+        <li><a href="#section-1">1. No Direct Personal Data Collection</a></li>
+        <li><a href="#section-2">2. Third-Party Services &amp; Data Collected</a></li>
+        <li><a href="#section-3">3. Device Permissions &amp; Local Processing</a></li>
+        <li><a href="#section-4">4. Personalized Ads, Opt-Out &amp; EEA/UK Consent</a></li>
+        <li><a href="#section-5">5. Your Privacy Rights (GDPR, CCPA, LGPD, UU PDP)</a></li>
+        <li><a href="#section-6">6. Data Retention, Security &amp; International Transfers</a></li>
+        <li><a href="#section-7">7. Children's Privacy (18+ Only)</a></li>
+        <li><a href="#section-8">8. Data Deletion Instructions</a></li>
+        <li><a href="#section-9">9. Policy Changes &amp; Contact Information</a></li>
+      </ul>
+    </nav>
+
+    <!-- Section 1 -->
+    <section id="section-1" class="legal-section">
+      <h2><span class="sec-num">01.</span> No Direct Personal Data Collection &amp; No Account Required</h2>
+      <p>
+        <strong>Game Reaper</strong> is developed and published by <strong>Agung Softworks</strong> ("Developer", "we", "us", or "our"). We respect your privacy and designed Game Reaper to operate with minimal data exposure.
+      </p>
+      <div class="callout-card">
+        <p>
+          <strong>Zero Registration Policy:</strong> Game Reaper does not require you to create an account or sign in. Agung Softworks does not directly ask for, collect, or store your name, email address, phone number, contact list, precise geographic location, or other personal identity details on our own servers.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="section-2" class="legal-section">
+      <h2><span class="sec-num">02.</span> Third-Party Services &amp; Data Collected</h2>
+      <p>
+        While Agung Softworks does not operate proprietary user databases, the Application integrates trusted third-party Software Development Kits (SDKs) to display advertisements in the free version and process Premium subscriptions. These third-party providers may automatically collect certain device and transaction data in accordance with their own privacy policies:
+      </p>
+
+      <div class="sdk-grid">
+        <div class="sdk-card">
+          <h3>
+            <span>Google AdMob</span>
+            <span class="tag">Advertising (Free Version)</span>
+          </h3>
+          <p>
+            Used to display ads in the free version of Game Reaper. AdMob may collect and process your Android <strong>Advertising ID</strong>, device information (device model, OS version, screen dimensions, language setting), <strong>IP address</strong> (which may be used to estimate general/coarse location), and <strong>ad interaction data</strong> (ad views, taps, and diagnostic crash/performance logs related to ad delivery).
+          </p>
+          <p style="margin-bottom: 0;">
+            Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>
+          </p>
+        </div>
+
+        <div class="sdk-card">
+          <h3>
+            <span>RevenueCat</span>
+            <span class="tag">Subscription Management</span>
+          </h3>
+          <p>
+            Used to manage Premium subscription entitlements and validate in-app purchases across monthly, 6-month, and annual plans. RevenueCat collects an <strong>anonymous App User ID</strong>, <strong>purchase and subscription history</strong> (order tokens, product identifiers, subscription status, trial eligibility), and basic device metadata to verify active Premium status.
+          </p>
+          <p style="margin-bottom: 0;">
+            Privacy Policy: <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">https://www.revenuecat.com/privacy</a>
+          </p>
+        </div>
+
+        <div class="sdk-card">
+          <h3>
+            <span>Google Play Billing / Google Play Services</span>
+            <span class="tag">Payment Processing</span>
+          </h3>
+          <p>
+            All subscription purchases and free trial conversions are processed securely by Google Play Billing. Google processes your billing credentials, payment method, and transaction records directly. Agung Softworks never has access to your credit card number or banking credentials.
+          </p>
+          <p style="margin-bottom: 0;">
+            Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="section-3" class="legal-section">
+      <h2><span class="sec-num">03.</span> Device Permissions &amp; Local Processing</h2>
+      <p>
+        Game Reaper requests only the permissions necessary to deliver its core gaming utility features:
+      </p>
+      <ul>
+        <li><strong>Notifications Permission:</strong> Used to display persistent status indicators for the Game Panel, active Jukebox music playback controls, and optimization status alerts while you use your device.</li>
+        <li><strong>ADB Shell via Shizuku API &amp; IAdb API:</strong> Used for advanced system utilities including RAM &amp; storage cache cleaning, stopping background processes, sensitivity calibration, and shortcut button mapping. These permissions are granted manually by you on your device.</li>
+      </ul>
+      <p>
+        <strong>100% On-Device Execution:</strong> All system optimization commands, ADB Shell scripts, Shizuku/IAdb calls, audio playback in Jukebox, and button mapping configurations execute strictly locally on your Android device. None of your local app lists, system process logs, or audio files are uploaded or transmitted to any external server.
+      </p>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="section-4" class="legal-section">
+      <h2><span class="sec-num">04.</span> Personalized Advertising, Opt-Out &amp; EEA/UK Consent</h2>
+      <p>
+        In the free version of the Application, Google AdMob may serve personalized or non-personalized advertisements depending on your region and consent settings.
+      </p>
+      <ul>
+        <li><strong>How to Opt Out or Delete Your Advertising ID:</strong> You can opt out of personalized ads or reset/delete your Android Advertising ID at any time in your device settings by opening <strong>Settings &gt; Google &gt; All services &gt; Ads</strong> (or <strong>Settings &gt; Privacy &gt; Ads</strong> depending on your Android version) and selecting <strong>Reset advertising ID</strong> or <strong>Delete advertising ID</strong>.</li>
+        <li><strong>EEA, UK, and Switzerland Consent:</strong> For users located in the European Economic Area (EEA), the United Kingdom (UK), and Switzerland, we present a consent management prompt compliant with the Google EU User Consent Policy before serving personalized ads. You may withdraw or modify your ad consent choices at any time through the Application's settings or by resetting your device permissions.</li>
+      </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="section-5" class="legal-section">
+      <h2><span class="sec-num">05.</span> Your Privacy Rights (GDPR, CCPA/CPRA, LGPD &amp; UU PDP)</h2>
+      <p>
+        Depending on where you live, you are entitled to specific data protection rights under applicable laws:
+      </p>
+      <ul>
+        <li><strong>GDPR / UK GDPR (European Economic Area &amp; United Kingdom):</strong> You have the right to request access to, rectification of, or erasure of your personal data, the right to restrict or object to processing, the right to data portability, and the right to withdraw consent at any time without affecting the lawfulness of prior processing.</li>
+        <li><strong>CCPA / CPRA (California, USA):</strong> California residents have the right to know what categories of personal information are collected or shared, the right to request deletion of personal information, the right to opt out of the "sale" or "sharing" of personal information for cross-context behavioral advertising (manageable via Android Advertising ID controls or upgrading to Premium), and the right to non-discrimination for exercising privacy rights.</li>
+        <li><strong>LGPD (Brazil — Lei Geral de Proteção de Dados):</strong> Brazilian users have the right to confirmation of the existence of processing, access to data, correction of incomplete or inaccurate data, anonymization, blocking or deletion of unnecessary data, and revocation of consent.</li>
+        <li><strong>UU PDP No. 27/2022 (Republic of Indonesia — Personal Data Protection Law):</strong> Indonesian users have the right to obtain transparent information regarding data processing, complete or update data, access data, terminate processing, delete/destroy personal data, and withdraw consent.</li>
+      </ul>
+      <p>
+        <strong>How to Exercise Your Rights:</strong> To exercise any of these rights or submit a privacy inquiry, contact us directly at <a href="mailto:agungputrayasa05@gmail.com">agungputrayasa05@gmail.com</a>. Because we do not collect your name or email inside the Application, please include your anonymous RevenueCat App User ID (if your request relates to subscription records) or relevant purchase details so we can locate and process your request with our third-party service providers.
+      </p>
+    </section>
+
+    <!-- Section 6 -->
+    <section id="section-6" class="legal-section">
+      <h2><span class="sec-num">06.</span> Data Retention, Security &amp; International Transfers</h2>
+      <p>
+        <strong>Local Preferences:</strong> Any user settings, sensitivity presets, or button mapping profiles you configure are stored locally within the Application's private sandbox storage on your Android device and remain there only until you clear the Application's data or uninstall the Application.
+      </p>
+      <p>
+        <strong>Third-Party Security &amp; International Data Transfers:</strong> Data processed by third-party providers (Google AdMob, Google Play Billing, and RevenueCat) is transmitted over encrypted HTTPS/TLS connections and stored on global cloud infrastructure, which may include servers located in the United States and other countries outside your country of residence. These third-party providers implement industry-standard technical and organizational safeguards and rely on recognized legal transfer mechanisms (such as Standard Contractual Clauses) where required by applicable law.
+      </p>
+    </section>
+
+    <!-- Section 7 -->
+    <section id="section-7" class="legal-section">
+      <h2><span class="sec-num">07.</span> Children's Privacy (18+ Only)</h2>
+      <p>
+        Game Reaper is strictly intended for adults aged <strong>18 and older</strong>. We do not knowingly target, market to, or collect any personal information from children or anyone under the age of 18. If you are a parent or legal guardian and believe that a minor has used the Application or had data processed by integrated third-party services, please contact us at <a href="mailto:agungputrayasa05@gmail.com">agungputrayasa05@gmail.com</a> and we will promptly assist in addressing the issue.
+      </p>
+    </section>
+
+    <!-- Section 8 -->
+    <section id="section-8" class="legal-section">
+      <h2><span class="sec-num">08.</span> Data Deletion Instructions (Google Play Data Safety)</h2>
+      <p>
+        In compliance with Google Play Data Safety requirements, you can delete your data at any time using the following methods:
+      </p>
+      <ul>
+        <li><strong>Deleting All Local App Data:</strong> Because Game Reaper does not use user accounts, all locally saved preferences and configurations can be permanently erased immediately by opening your Android device <strong>Settings &gt; Apps &gt; Game Reaper &gt; Storage &amp; cache &gt; Clear storage / Clear data</strong>, or by <strong>uninstalling Game Reaper</strong> from your device.</li>
+        <li><strong>Resetting/Deleting Advertising Data:</strong> You can permanently delete your Android Advertising ID at any time via <strong>Settings &gt; Google &gt; Ads &gt; Delete advertising ID</strong>.</li>
+        <li><strong>Requesting Deletion of Third-Party Subscription Records:</strong> If you wish to request deletion of anonymous subscription/purchase identifiers held by our third-party processor (RevenueCat), please send an email to <a href="mailto:agungputrayasa05@gmail.com">agungputrayasa05@gmail.com</a> with the subject line <strong>"Data Deletion Request — Game Reaper"</strong>. We will process your deletion request in accordance with applicable privacy laws.</li>
+      </ul>
+    </section>
+
+    <!-- Section 9 -->
+    <section id="section-9" class="legal-section">
+      <h2><span class="sec-num">09.</span> Changes to This Privacy Policy &amp; Contact Information</h2>
+      <p>
+        We may update this Privacy Policy periodically to reflect changes in our Application features, third-party SDKs, or regulatory requirements. When we make updates, we will revise the "Last updated" date at the top of this page and publish the updated policy at <a href="https://gamereaper.my.id/privacy.html">https://gamereaper.my.id/privacy.html</a>. We encourage you to review this page periodically.
+      </p>
+      <p>
+        If you have any questions, requests, or concerns about this Privacy Policy or our privacy practices, please contact us:
+      </p>
+      <ul>
+        <li><strong>Developer:</strong> Agung Softworks</li>
+        <li><strong>Email:</strong> <a href="mailto:agungputrayasa05@gmail.com">agungputrayasa05@gmail.com</a></li>
+        <li><strong>Website:</strong> <a href="https://gamereaper.my.id">https://gamereaper.my.id</a></li>
+      </ul>
+    </section>
+
+    <div class="back-to-top-wrap">
+      <a href="#top" class="btn-pill" aria-label="Back to top">&uarr; Back to top</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div>
+          <strong style="color: #ffffff;">Game Reaper</strong> — Developed by Agung Softworks
+        </div>
+        <div class="footer-links">
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="current-year">2026</span> Agung Softworks. All rights reserved.</span>
+        <span>Contact: <a href="mailto:agungputrayasa05@gmail.com">agungputrayasa05@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var yearEl = document.getElementById('current-year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
+</body>
+</html>

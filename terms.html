@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Game Reaper</title>
+  <meta name="description" content="Terms of Service for Game Reaper Android application by Agung Softworks." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://gamereaper.my.id/terms.html" />
+  <style>
+    :root {
+      --bg: #000000;
+      --text-primary: #ffffff;
+      --text-secondary: #94a3b8;
+      --accent-red: #e8323c;
+      --highlight-yellow: #f2e972;
+      --card-border: rgba(223, 223, 223, 0.6);
+      --max-w: 760px;
+      --font-stack: -apple-system, Roboto, "Segoe UI", sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-stack);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent-red);
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    a:hover {
+      opacity: 0.85;
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
+      border-bottom: 1px solid rgba(223, 223, 223, 0.14);
+      background-color: rgba(0, 0, 0, 0.92);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .brand-logo:hover {
+      text-decoration: none;
+      opacity: 0.95;
+    }
+
+    .brand-logo-mark {
+      width: 12px;
+      height: 22px;
+      background-color: var(--accent-red);
+      border-radius: 3px;
+      display: inline-block;
+      box-shadow: 0 0 12px rgba(232, 50, 60, 0.6);
+    }
+
+    .brand-logo span.accent {
+      color: var(--accent-red);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    nav a.active {
+      color: var(--accent-red);
+      border-bottom-color: var(--accent-red);
+    }
+
+    /* Page Hero */
+    .doc-hero {
+      padding: 48px 0 28px;
+      border-bottom: 1px solid rgba(223, 223, 223, 0.14);
+      margin-bottom: 28px;
+    }
+
+    .doc-badge {
+      display: inline-block;
+      background-color: rgba(242, 233, 114, 0.12);
+      color: var(--highlight-yellow);
+      border: 1px solid rgba(242, 233, 114, 0.45);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .doc-hero h1 {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .doc-meta {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .doc-meta strong {
+      color: var(--highlight-yellow);
+    }
+
+    /* Table of Contents Card */
+    .toc-card {
+      background: transparent;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 36px;
+    }
+
+    .toc-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toc-title span {
+      color: var(--highlight-yellow);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 20px;
+    }
+
+    .toc-list a {
+      font-size: 14px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      display: inline-block;
+      padding: 2px 0;
+    }
+
+    .toc-list a:hover {
+      color: var(--accent-red);
+      text-decoration: none;
+    }
+
+    /* Legal Sections */
+    .legal-section {
+      margin-bottom: 34px;
+      scroll-margin-top: 84px;
+    }
+
+    .legal-section h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-primary);
+      padding-left: 14px;
+      border-left: 4px solid var(--accent-red);
+      line-height: 1.3;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .legal-section h2 .sec-num {
+      color: var(--highlight-yellow);
+      margin-right: 6px;
+    }
+
+    .legal-section p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .legal-section ul {
+      list-style: disc;
+      padding-left: 22px;
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+    }
+
+    .legal-section li {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+
+    .legal-section strong {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    .callout-card {
+      background: linear-gradient(45deg, rgba(232, 50, 60, 0.24) 24%, #000000 100%);
+      border: 2px solid var(--accent-red);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin: 16px 0;
+    }
+
+    .callout-card p {
+      margin-bottom: 0;
+      color: var(--text-primary);
+      font-size: 15px;
+    }
+
+    /* Back to Top Action */
+    .back-to-top-wrap {
+      margin: 40px 0 24px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .btn-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      background: linear-gradient(45deg, #f2e973 18%, #ffffff 100%);
+      color: #000000;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 11px 22px;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(242, 233, 114, 0.2);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(242, 233, 114, 0.32);
+      text-decoration: none;
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid rgba(223, 223, 223, 0.14);
+      padding: 32px 0 40px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-red);
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .footer-bottom a {
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--accent-red);
+    }
+
+    @media (max-width: 640px) {
+      .doc-hero h1 {
+        font-size: 28px;
+      }
+      .toc-list {
+        grid-template-columns: 1fr;
+      }
+      .legal-section h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Game Reaper Home">
+        <span class="brand-logo-mark" aria-hidden="true"></span>
+        <span>Game <span class="accent">Reaper</span></span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="terms.html" class="active">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="doc-hero">
+      <span class="doc-badge">Legal Agreement</span>
+      <h1>Terms of Service</h1>
+      <p class="doc-meta">
+        Last updated: <strong>October 27, 2026</strong> &bull; Effective for <strong>Game Reaper (Android)</strong>
+      </p>
+    </section>
+
+    <!-- Table of Contents -->
+    <nav class="toc-card" aria-label="Table of Contents">
+      <div class="toc-title"><span>#</span> Table of Contents</div>
+      <ul class="toc-list">
+        <li><a href="#section-1">1. Acceptance of Terms</a></li>
+        <li><a href="#section-2">2. Age Requirement (18+)</a></li>
+        <li><a href="#section-3">3. Service Description &amp; License</a></li>
+        <li><a href="#section-4">4. Subscriptions, Free Trials &amp; Billing</a></li>
+        <li><a href="#section-5">5. Refund Policy</a></li>
+        <li><a href="#section-6">6. Advertisements in Free Version</a></li>
+        <li><a href="#section-7">7. ADB Shell, Shizuku &amp; IAdb Features</a></li>
+        <li><a href="#section-8">8. Non-Affiliation &amp; Trademarks</a></li>
+        <li><a href="#section-9">9. Prohibited Conduct</a></li>
+        <li><a href="#section-10">10. Disclaimer of Warranties &amp; Liability</a></li>
+        <li><a href="#section-11">11. Governing Law</a></li>
+        <li><a href="#section-12">12. Changes to Terms &amp; Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Section 1 -->
+    <section id="section-1" class="legal-section">
+      <h2><span class="sec-num">01.</span> Acceptance of Terms</h2>
+      <p>
+        Welcome to <strong>Game Reaper</strong>. These Terms of Service ("Terms") constitute a legally binding agreement between you ("User" or "you") and <strong>Agung Softworks</strong> (an individual developer operating via <a href="https://gamereaper.my.id">https://gamereaper.my.id</a>, referred to as "Developer", "we", "us", or "our") governing your download, installation, and use of the Game Reaper Android mobile application and related website services (collectively, the "Application" or "Service").
+      </p>
+      <p>
+        By downloading, installing, accessing, or using Game Reaper from Google Play, you acknowledge that you have read, understood, and agree to be bound by these Terms and our <a href="privacy.html">Privacy Policy</a>. If you do not agree to these Terms, please do not install or use the Application and uninstall it from your device immediately.
+      </p>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="section-2" class="legal-section">
+      <h2><span class="sec-num">02.</span> Age Requirement (18+)</h2>
+      <p>
+        Game Reaper is intended solely for users who are <strong>18 years of age or older</strong>. By accessing or using the Application, you represent and warrant that you are at least 18 years old and possess the legal capacity to enter into a binding agreement in your jurisdiction. Individuals under the age of 18 are strictly prohibited from installing or using the Application.
+      </p>
+    </section>
+
+    <!-- Section 3 -->
+    <section id="section-3" class="legal-section">
+      <h2><span class="sec-num">03.</span> Service Description &amp; License Grant</h2>
+      <p>
+        Game Reaper is an Android utility and game space application providing system management and gaming convenience tools, including a RAM and storage cache cleaner, background process stopper, touch sensitivity calibration, Game Panel overlay, Jukebox music player, shortcut button mapping, and related local device utilities. The Application supports multiple in-app languages and does not require you to register or create a user account.
+      </p>
+      <p>
+        Subject to your continuous compliance with these Terms, Agung Softworks grants you a <strong>limited, non-exclusive, non-transferable, non-sublicensable, and revocable license</strong> to download, install, and use the Application on a compatible Android device that you own or control, strictly for your personal, non-commercial use. All rights not expressly granted to you in these Terms are reserved by Agung Softworks.
+      </p>
+    </section>
+
+    <!-- Section 4 -->
+    <section id="section-4" class="legal-section">
+      <h2><span class="sec-num">04.</span> Subscriptions, Free Trials &amp; Billing</h2>
+      <p>
+        Game Reaper offers both a free, ad-supported version and paid <strong>Premium</strong> subscription plans (available in <strong>Monthly</strong>, <strong>6-Month</strong>, and <strong>Annual</strong> billing intervals). Premium subscribers receive an ad-free experience and access to all premium features within the Application. Subscription management and entitlement verification are facilitated using Google Play Billing and RevenueCat.
+      </p>
+      <ul>
+        <li><strong>Google Play Billing:</strong> All payments are charged directly to your Google Play account upon confirmation of purchase. Agung Softworks does not collect or store your credit card, bank account, or payment instrument details.</li>
+        <li><strong>Automatic Renewal:</strong> Subscriptions automatically renew at the end of each billing cycle (monthly, every 6 months, or annually) unless auto-renew is turned off at least 24 hours prior to the end of the current billing period. Your Google Play account will be charged for renewal within 24 hours prior to the end of the current period at the applicable subscription rate.</li>
+        <li><strong>How to Cancel:</strong> You may manage or cancel your subscription at any time directly through the Google Play Store app by navigating to <strong>Google Play &gt; Profile Icon &gt; Payments &amp; subscriptions &gt; Subscriptions</strong>, selecting <strong>Game Reaper</strong>, and tapping <strong>Cancel subscription</strong>. Uninstalling the Application does not automatically cancel an active subscription.</li>
+        <li><strong>Free Trials:</strong> Certain subscription packages may occasionally offer a free trial period for eligible users. If you activate a subscription that includes a free trial, you will not be charged during the trial window. <strong>Unless you cancel your subscription through Google Play before the free trial period expires, your trial will automatically convert into a paid recurring subscription</strong> and your Google Play account will be charged the stated subscription price. Any unused portion of a free trial period will be forfeited if you purchase a subscription before the trial ends.</li>
+        <li><strong>Price Changes:</strong> We reserve the right to modify subscription pricing from time to time. If the price of your recurring subscription changes, Google Play will notify you in advance and provide instructions on how to accept the new price or cancel before the change takes effect.</li>
+      </ul>
+    </section>
+
+    <!-- Section 5 -->
+    <section id="section-5" class="legal-section">
+      <h2><span class="sec-num">05.</span> Refund Policy</h2>
+      <p>
+        All subscription and in-app transactions are processed exclusively through Google Play. Consequently, <strong>all refund requests are governed by and subject to the official Google Play Refund Policy</strong>. You may request a refund directly through Google Play Help or your Google Play purchase history page within the applicable eligibility window established by Google Play.
+      </p>
+    </section>
+
+    <!-- Section 6 -->
+    <section id="section-6" class="legal-section">
+      <h2><span class="sec-num">06.</span> Advertisements in the Free Version</h2>
+      <p>
+        The free version of Game Reaper displays third-party advertisements served via <strong>Google AdMob</strong> to support ongoing development and maintenance. By using the free version of the Application, you consent to the display of such advertisements. Upgrading to an active Premium subscription removes advertisements across the Application for the duration of your active subscription period.
+      </p>
+    </section>
+
+    <!-- Section 7 -->
+    <section id="section-7" class="legal-section">
+      <h2><span class="sec-num">07.</span> ADB Shell, Shizuku &amp; IAdb Features</h2>
+      <div class="callout-card">
+        <p>
+          <strong>Important Notice:</strong> Advanced ADB Shell features rely on the Shizuku API and IAdb API, which are authorized manually by you and executed locally on your device. You assume full responsibility for enabling and using these features.
+        </p>
+      </div>
+      <p>
+        Certain advanced features within Game Reaper utilize Android Debug Bridge (ADB) Shell functionality via the <strong>Shizuku API</strong> and <strong>IAdb API</strong>. These permissions are granted explicitly and voluntarily by the User on the local device. All optimization and utility processes run locally on your hardware and are never transmitted to any external server.
+      </p>
+      <p>
+        By enabling or using ADB Shell, Shizuku, IAdb, RAM cleaning, background process stopping, sensitivity calibration, or button mapping features, you expressly acknowledge and agree that:
+      </p>
+      <ul>
+        <li><strong>No Guaranteed Performance Outcomes:</strong> Device hardware, Android OS versions, OEM skins, and thermal conditions vary widely. We do not warrant or guarantee any specific frame-rate increase, latency reduction, storage gain, or performance improvement.</li>
+        <li><strong>Assumption of Risk:</strong> You use all system-level and ADB Shell utilities entirely at your own risk. Agung Softworks is not responsible or liable for any device instability, system malfunction, hardware or software damage, battery drain, or loss of local data resulting from the use of the Application.</li>
+        <li><strong>Third-Party Game Restrictions &amp; Penalties:</strong> Different mobile games enforce varying policies regarding overlay panels, button mappers, or active ADB/developer bridge states. Agung Softworks shall not be held liable for any account warnings, suspensions, bans, or penalties imposed by any third-party game publisher or anti-cheat system.</li>
+      </ul>
+    </section>
+
+    <!-- Section 8 -->
+    <section id="section-8" class="legal-section">
+      <h2><span class="sec-num">08.</span> Non-Affiliation &amp; Third-Party Trademarks</h2>
+      <p>
+        Game Reaper is an independent utility application developed by Agung Softworks. <strong>Game Reaper is not affiliated with, endorsed by, sponsored by, or connected to any game developer, game publisher, or hardware manufacturer.</strong> Any third-party game titles, brand names, logos, or trademarks referenced by users or displayed from locally installed apps on a user's device remain the sole property of their respective owners.
+      </p>
+    </section>
+
+    <!-- Section 9 -->
+    <section id="section-9" class="legal-section">
+      <h2><span class="sec-num">09.</span> Prohibited Conduct</h2>
+      <p>
+        You agree not to misuse the Application. Specifically, you must not:
+      </p>
+      <ul>
+        <li>Use the Application to cheat, hack, modify game memory, inject unauthorized code, or gain an unfair competitive advantage in violation of any third-party game's Terms of Service or Fair Play policies.</li>
+        <li>Decompile, disassemble, reverse engineer, modify, tamper with, or attempt to extract the source code or underlying algorithms of Game Reaper, except to the extent such restriction is expressly prohibited by applicable law.</li>
+        <li>Circumvent, disable, or bypass the Application's subscription verification, paywall mechanisms, or advertising integrations.</li>
+        <li>Redistribute, repackage, rent, lease, or distribute modified APK/AAB files of Game Reaper outside official Google Play distribution channels.</li>
+      </ul>
+    </section>
+
+    <!-- Section 10 -->
+    <section id="section-10" class="legal-section">
+      <h2><span class="sec-num">10.</span> Disclaimer of Warranties, Limitation of Liability &amp; Termination</h2>
+      <p>
+        <strong>"AS IS" and "AS AVAILABLE" Disclaimer:</strong> To the maximum extent permitted by applicable law, Game Reaper is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express, implied, or statutory, including but not limited to implied warranties of merchantability, fitness for a particular purpose, non-infringement, or error-free operation.
+      </p>
+      <p>
+        <strong>Limitation of Liability:</strong> To the fullest extent permitted by law, Agung Softworks shall not be liable for any indirect, incidental, consequential, special, or punitive damages, or any loss of data, device functionality, game accounts, or profits arising out of or related to your use of or inability to use the Application. In no event shall Agung Softworks' total aggregate liability exceed the total amount you paid for the Application via Google Play in the twelve (12) months immediately preceding the event giving rise to the claim (or zero if you have only used the free version).
+      </p>
+      <p>
+        <strong>Termination of Access:</strong> We reserve the right to suspend, restrict, or terminate your license to use the Application at any time without liability if you breach these Terms or engage in unlawful or abusive conduct. You may terminate these Terms at any time by uninstalling the Application and canceling any active subscription via Google Play.
+      </p>
+    </section>
+
+    <!-- Section 11 -->
+    <section id="section-11" class="legal-section">
+      <h2><span class="sec-num">11.</span> Governing Law &amp; Consumer Rights</h2>
+      <p>
+        These Terms and any dispute arising out of or in connection with Game Reaper shall be governed by and construed in accordance with the laws of the <strong>Republic of Indonesia</strong>, without regard to its conflict of law principles. If you reside outside the Republic of Indonesia, this choice of governing law does not deprive you of the protection afforded to you by mandatory consumer protection laws in your country of residence.
+      </p>
+    </section>
+
+    <!-- Section 12 -->
+    <section id="section-12" class="legal-section">
+      <h2><span class="sec-num">12.</span> Changes to These Terms &amp; Contact Information</h2>
+      <p>
+        We may update these Terms of Service from time to time to reflect changes in our features, third-party integrations, or legal requirements. When we make changes, we will update the "Last updated" date at the top of this page and publish the revised Terms at <a href="https://gamereaper.my.id/terms.html">https://gamereaper.my.id/terms.html</a>. Continued use of the Application after changes become effective constitutes acceptance of the revised Terms.
+      </p>
+      <p>
+        If you have any questions, concerns, or notices regarding these Terms, please contact the developer:
+      </p>
+      <ul>
+        <li><strong>Developer:</strong> Agung Softworks</li>
+        <li><strong>Email:</strong> <a href="mailto:agungputrayasa05@gmail.com">agungputrayasa05@gmail.com</a></li>
+        <li><strong>Website:</strong> <a href="https://gamereaper.my.id">https://gamereaper.my.id</a></li>
+      </ul>
+    </section>
+
+    <div class="back-to-top-wrap">
+      <a href="#top" class="btn-pill" aria-label="Back to top">&uarr; Back to top</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div>
+          <strong style="color: #ffffff;">Game Reaper</strong> — Developed by Agung Softworks
+        </div>
+        <div class="footer-links">
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="current-year">2026</span> Agung Softworks. All rights reserved.</span>
+        <span>Contact: <a href="mailto:agungputrayasa05@gmail.com">agungputrayasa05@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var yearEl = document.getElementById('current-year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
+</body>
+</html>

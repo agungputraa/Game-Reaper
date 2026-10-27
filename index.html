@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Reaper — Ultimate Android Gaming Utility &amp; Game Space</title>
+  <meta name="description" content="Game Reaper is an Android gaming utility and game space featuring a RAM &amp; Storage Cache Cleaner, Background Process Booster, Sensitivity Calibration, Game Panel, Jukebox, and Button Mapping." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="canonical" href="https://gamereaper.my.id/index.html" />
+  <style>
+    :root {
+      --bg: #000000;
+      --text-primary: #ffffff;
+      --text-secondary: #94a3b8;
+      --accent-red: #e8323c;
+      --highlight-yellow: #f2e972;
+      --card-border: rgba(223, 223, 223, 0.6);
+      --max-w: 760px;
+      --font-stack: -apple-system, Roboto, "Segoe UI", sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-stack);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
+      border-bottom: 1px solid rgba(223, 223, 223, 0.14);
+      background-color: rgba(0, 0, 0, 0.92);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    .brand-logo-mark {
+      width: 12px;
+      height: 22px;
+      background-color: var(--accent-red);
+      border-radius: 3px;
+      display: inline-block;
+      box-shadow: 0 0 12px rgba(232, 50, 60, 0.6);
+    }
+
+    .brand-logo span.accent {
+      color: var(--accent-red);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+    }
+
+    nav a.active {
+      color: var(--accent-red);
+      border-bottom-color: var(--accent-red);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 64px 0 48px;
+      text-align: left;
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .badge-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(242, 233, 114, 0.12);
+      color: var(--highlight-yellow);
+      border: 1px solid rgba(242, 233, 114, 0.45);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .badge-neutral {
+      display: inline-flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.06);
+      color: var(--text-secondary);
+      border: 1px solid rgba(223, 223, 223, 0.25);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 999px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 .red {
+      color: var(--accent-red);
+    }
+
+    .hero-tagline {
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      max-width: 660px;
+      line-height: 1.65;
+    }
+
+    .cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      background: linear-gradient(45deg, #f2e973 18%, #ffffff 100%);
+      color: #000000;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 14px 28px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(242, 233, 114, 0.22);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(242, 233, 114, 0.34);
+    }
+
+    .btn-cta svg {
+      width: 18px;
+      height: 18px;
+      fill: #000000;
+      flex-shrink: 0;
+    }
+
+    .hero-meta {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .hero-meta span strong {
+      color: var(--highlight-yellow);
+      font-weight: 700;
+    }
+
+    /* Section Titles */
+    .section {
+      padding: 36px 0;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      padding-left: 14px;
+      border-left: 4px solid var(--accent-red);
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--text-secondary);
+      padding-left: 18px;
+    }
+
+    /* Feature Grid Cards */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: transparent;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 22px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card:hover {
+      border-color: var(--accent-red);
+      transform: translateY(-2px);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background-color: rgba(232, 50, 60, 0.12);
+      border: 1px solid rgba(232, 50, 60, 0.35);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-red);
+    }
+
+    .card-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--accent-red);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Highlighted Info Strip (Privacy & Local Execution) */
+    .trust-strip {
+      margin-top: 20px;
+      background: transparent;
+      border: 2px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .trust-item .num {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--highlight-yellow);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .trust-item p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Premium Feature Card */
+    .card-premium {
+      background: linear-gradient(45deg, rgba(232, 50, 60, 0.28) 24%, #000000 100%);
+      border: 2.5px solid var(--accent-red);
+      border-radius: 16px;
+      padding: 30px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .premium-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .premium-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--highlight-yellow);
+      color: #000000;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+    .card-premium h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .card-premium > p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 22px;
+      max-width: 640px;
+    }
+
+    .premium-perks {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 20px;
+      margin-bottom: 24px;
+    }
+
+    .premium-perks li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .premium-perks li svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--highlight-yellow);
+      fill: none;
+      stroke-width: 2.5;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .plans-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .plan-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .plan-pill {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      background-color: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(223, 223, 223, 0.4);
+      padding: 6px 14px;
+      border-radius: 999px;
+    }
+
+    .plan-pill span {
+      color: var(--highlight-yellow);
+    }
+
+    .plan-note {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid rgba(223, 223, 223, 0.14);
+      padding: 32px 0 40px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-red);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .footer-bottom a {
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--accent-red);
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding: 42px 0 32px;
+      }
+      .hero h1 {
+        font-size: 29px;
+      }
+      .section-title {
+        font-size: 24px;
+      }
+      .features-grid,
+      .premium-perks,
+      .trust-strip {
+        grid-template-columns: 1fr;
+      }
+      .card-premium {
+        padding: 24px 20px;
+      }
+      .card-premium h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Game Reaper Home">
+        <span class="brand-logo-mark" aria-hidden="true"></span>
+        <span>Game <span class="accent">Reaper</span></span>
+      </a>
+      <nav aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="badge-row">
+        <span class="badge-highlight">Android Gaming Utility</span>
+        <span class="badge-neutral">Multi-Language Support In-App</span>
+      </div>
+      <h1>Unleash Your Device with <span class="red">Game Reaper</span></h1>
+      <p class="hero-tagline">
+        A dedicated Android game space and system utility engineered to clean RAM and storage cache, stop background processes, calibrate touch sensitivity, and put essential gaming tools right at your fingertips—all running locally on your device without requiring an account.
+      </p>
+      <div class="cta-group">
+        <a href="#features" class="btn-cta" aria-label="Get it on Google Play">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3.609 1.814L13.792 12 3.61 22.186a1.8 1.8 0 0 1-.61-1.356V3.17c0-.535.236-1.022.609-1.356zm11.26 11.26l2.794 2.794-11.45 6.543 8.656-9.337zm3.829-2.203l2.357 1.347c.887.507.887 1.789 0 2.296l-2.357 1.347-2.835-2.495 2.835-2.495zM6.213 1.599l11.45 6.543-2.794 2.794L6.213 1.599z"/>
+          </svg>
+          <span>Get it on Google Play</span>
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span>Platform: <strong>Android (Google Play)</strong></span>
+        <span>Privacy: <strong>No Account Required</strong></span>
+        <span>Age Rating: <strong>18+</strong></span>
+      </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section id="features" class="section">
+      <div class="section-header">
+        <h2 class="section-title">Built for Focused Mobile Gaming</h2>
+        <p class="section-subtitle">Practical system tools and in-game overlays designed for clean, responsive control.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M3 6h18"/>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/>
+              <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+              <line x1="10" y1="11" x2="10" y2="17"/>
+              <line x1="14" y1="11" x2="14" y2="17"/>
+            </svg>
+          </div>
+          <h3>Cache &amp; RAM Cleaner</h3>
+          <p>Quickly clear residual application cache from storage and free up active memory before launching demanding titles.</p>
+        </article>
+
+        <!-- Feature 2 -->
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3>Background Process Booster</h3>
+          <p>Halt unnecessary background apps and idle services so system resources stay focused on your active gaming session.</p>
+        </article>
+
+        <!-- Feature 3 -->
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="3"/>
+              <line x1="12" y1="1" x2="12" y2="4"/>
+              <line x1="12" y1="20" x2="12" y2="23"/>
+              <line x1="1" y1="12" x2="4" y2="12"/>
+              <line x1="20" y1="12" x2="23" y2="12"/>
+            </svg>
+          </div>
+          <h3>Sensitivity Calibration</h3>
+          <p>Fine-tune touch response and swipe sensitivity settings tailored to your personal playstyle and device screen.</p>
+        </article>
+
+        <!-- Feature 4 -->
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="4" width="20" height="16" rx="3"/>
+              <line x1="6" y1="12" x2="10" y2="12"/>
+              <line x1="8" y1="10" x2="8" y2="14"/>
+              <circle cx="15.5" cy="10.5" r="1"/>
+              <circle cx="17.5" cy="13.5" r="1"/>
+            </svg>
+          </div>
+          <h3>Game Panel</h3>
+          <p>Access an intuitive game space dashboard and quick-access control panel to manage utilities without leaving your game.</p>
+        </article>
+
+        <!-- Feature 5 -->
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 18V5l12-2v13"/>
+              <circle cx="6" cy="18" r="3"/>
+              <circle cx="18" cy="16" r="3"/>
+            </svg>
+          </div>
+          <h3>Jukebox</h3>
+          <p>Play and control your favorite background audio tracks seamlessly through the integrated in-app Jukebox player.</p>
+        </article>
+
+        <!-- Feature 6 -->
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+              <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+              <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+              <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+            </svg>
+          </div>
+          <h3>Button Mapping</h3>
+          <p>Configure customizable shortcut buttons and quick-action triggers for faster access to key utility functions.</p>
+        </article>
+      </div>
+
+      <!-- Local Execution & ADB Shell Note -->
+      <div class="trust-strip" aria-label="Technical Highlights">
+        <div class="trust-item">
+          <span class="num">100% Local Processing</span>
+          <p>All RAM cleaning, process stopping, and calibration commands run directly on your Android device.</p>
+        </div>
+        <div class="trust-item">
+          <span class="num">Shizuku &amp; IAdb Ready</span>
+          <p>Advanced ADB Shell utilities operate via user-granted Shizuku API and IAdb API permissions locally.</p>
+        </div>
+        <div class="trust-item">
+          <span class="num">Zero Sign-Up</span>
+          <p>No user registration, no personal contact collection, and multiple in-app languages supported out of the box.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium Section -->
+    <section class="section">
+      <div class="card-premium">
+        <div class="premium-top">
+          <span class="premium-badge">Premium Access</span>
+        </div>
+        <h2>Upgrade to Game Reaper Premium</h2>
+        <p>
+          Enjoy Game Reaper for free with ad support, or unlock the complete experience with a flexible Google Play subscription.
+        </p>
+        <ul class="premium-perks">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>100% Ad-Free Experience Across the App</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Full Access to All Premium Utility Features</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Advanced ADB Shell &amp; Custom Calibration Tools</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Secure Billing &amp; Management via Google Play</span>
+          </li>
+        </ul>
+        <div class="plans-row">
+          <div class="plan-pills">
+            <span class="plan-pill">Monthly Plan</span>
+            <span class="plan-pill"><span>6-Month</span> Plan</span>
+            <span class="plan-pill"><span>Annual</span> Plan</span>
+          </div>
+          <span class="plan-note">Selected plans may include an eligible free trial via Google Play.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div>
+          <strong style="color: #ffffff;">Game Reaper</strong> — Developed by Agung Softworks
+        </div>
+        <div class="footer-links">
+          <a href="terms.html">Terms of Service</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="current-year">2026</span> Agung Softworks. All rights reserved.</span>
+        <span>Contact: <a href="mailto:agungputrayasa05@gmail.com">agungputrayasa05@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var yearEl = document.getElementById('current-year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
+</body>
+</html>
